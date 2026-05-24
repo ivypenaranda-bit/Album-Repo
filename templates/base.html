@@ -30,6 +30,7 @@
       </div>
     </nav>
 
+    {% block hero %}
     <header class="hero py-6 text-white">
       <div class="container">
         <div class="row align-items-center">
@@ -56,6 +57,7 @@
         </div>
       </div>
     </header>
+    {% endblock %}
 
     <main class="container my-5">
       {% block content %}{% endblock %}
