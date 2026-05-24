@@ -29,13 +29,13 @@ body{margin:0; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Robot
 .form-card, .auth-card{background:#fff; border:1px solid rgba(111,66,193,.12);}
 .form-page, .auth-page{padding-bottom:2rem;}
 
-.auth-page{min-height:calc(100vh - 110px); display:flex; align-items:center; background:radial-gradient(circle at top, rgba(111,66,193,.08), transparent 30%), linear-gradient(180deg, #fcfbff 0%, #f5f1ff 100%);}
-.auth-card{padding:2rem 1.75rem; border-radius:28px; box-shadow:0 24px 60px rgba(79,61,110,.08);}
+.auth-page{min-height:calc(100vh - 110px); display:flex; align-items:center; justify-content:center; padding:4rem 0; background:radial-gradient(circle at top, rgba(111,66,193,.08), transparent 30%), linear-gradient(180deg, #fcfbff 0%, #f5f1ff 100%);}
+.auth-card{padding:2rem 1.75rem; border-radius:28px; box-shadow:0 24px 60px rgba(79,61,110,.08); width:100%; max-width:560px;}
 .auth-header{padding-bottom:0.75rem; border-bottom:1px solid rgba(111,66,193,.12);}
 .auth-header h2{font-size:2rem; margin-bottom:0.5rem;}
 .auth-badge{width:52px; height:52px; margin:0 auto 1rem; display:flex; align-items:center; justify-content:center; border-radius:18px; color:#fff; background:linear-gradient(135deg, rgba(111,66,193,1), rgba(107,77,199,0.95)); font-weight:700; font-size:1.2rem;}
 .auth-form{display:grid; gap:1rem;}
-.auth-form p{margin-bottom:0;}
+.auth-form p{margin-bottom:1rem;}
 .auth-form label{font-weight:600; color:#3d3566; display:block; margin-bottom:.35rem;}
 .auth-form input, .auth-form select, .auth-form textarea{width:100%; border-radius:12px; border:1px solid rgba(111,66,193,.16); padding:.85rem 1rem; background:#fff; font-size:1rem;}
 .auth-form input:focus, .auth-form select:focus, .auth-form textarea:focus{box-shadow:0 0 0 0.2rem rgba(111,66,193,.12); border-color:var(--violet)}
