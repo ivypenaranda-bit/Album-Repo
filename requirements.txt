@@ -5,3 +5,4 @@ dj-database-url
 python-dotenv
 cloudinary
 django-cloudinary-storage
+whitenoise
