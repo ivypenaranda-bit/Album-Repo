@@ -26,3 +26,6 @@ class Photo(models.Model):
 
     def __str__(self):
         return f"Photo {self.id} in {self.album.title}"
+
+    def get_absolute_url(self):
+        return reverse('albums:album-detail', kwargs={'pk': self.album.pk})

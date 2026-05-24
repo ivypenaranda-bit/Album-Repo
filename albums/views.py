@@ -56,3 +56,23 @@ class PhotoCreateView(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse('albums:album-detail', args=[self.album.pk])
+
+class PhotoOwnerOrAdminMixin(UserPassesTestMixin):
+    def test_func(self):
+        obj = self.get_object()
+        user = self.request.user
+        if not user.is_authenticated:
+            return False
+        return user == obj.album.owner or user.groups.filter(name='AlbumAdmin').exists() or user.is_staff
+
+class PhotoUpdateView(LoginRequiredMixin, PhotoOwnerOrAdminMixin, UpdateView):
+    model = Photo
+    form_class = PhotoForm
+    template_name = 'albums/photo_form.html'
+
+class PhotoDeleteView(LoginRequiredMixin, PhotoOwnerOrAdminMixin, DeleteView):
+    model = Photo
+    template_name = 'albums/photo_confirm_delete.html'
+
+    def get_success_url(self):
+        return reverse('albums:album-detail', args=[self.object.album.pk])

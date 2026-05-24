@@ -29,7 +29,15 @@
   <div class="photo-grid">
     {% for photo in object.photos.all %}
       <div class="photo-card">
-        <img src="{{ photo.image.url }}" alt="{{ photo.caption }}">
+        <div class="photo-card-image-wrapper">
+          <img src="{{ photo.image.url }}" alt="{{ photo.caption }}">
+          {% if user == object.owner or user.is_staff %}
+            <div class="photo-card-overlay">
+              <a class="btn btn-sm btn-primary me-2" href="{% url 'albums:photo-update' photo.pk %}" title="Edit photo">Edit</a>
+              <a class="btn btn-sm btn-danger" href="{% url 'albums:photo-delete' photo.pk %}" title="Delete photo">Delete</a>
+            </div>
+          {% endif %}
+        </div>
         {% if photo.caption %}
           <div class="p-3">
             <p class="mb-0 text-muted">{{ photo.caption }}</p>
