@@ -33,6 +33,17 @@ python manage.py runserver
 
 Deploy: create a Render Web Service, select this repo, set `PYTHONUNBUFFERED=1` and the env vars above. Use the `Procfile` and `requirements.txt`.
 
+Render build command:
+```bash
+pip install -r requirements.txt && python manage.py migrate --noinput && python manage.py collectstatic --noinput
+```
+
+Render start command:
+```bash
+gunicorn photo_album.wsgi:application --log-file -
+```
+
 Notes:
+- Run `python manage.py migrate --noinput` after setting `DATABASE_URL` so Django creates the `albums_album` table in Postgres.
 - Create a Django superuser and optionally a `AlbumAdmin` group to assign album administrator privileges.
 - Ensure Cloudinary credentials are set on Render; do not commit secrets.
