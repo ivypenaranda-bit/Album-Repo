@@ -20,7 +20,12 @@
             {% if user.is_authenticated %}
               <li class="nav-item me-2"><a class="btn btn-outline-light btn-sm" href="{% url 'albums:album-create' %}">New Album</a></li>
               <li class="nav-item me-2"><span class="nav-link text-white">{{ user.username }}</span></li>
-              <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+              <li class="nav-item">
+                <form method="post" action="{% url 'logout' %}">
+                  {% csrf_token %}
+                  <button type="submit" class="nav-link btn btn-link text-white p-0">Logout</button>
+                </form>
+              </li>
             {% else %}
               <li class="nav-item me-2"><a class="nav-link" href="{% url 'signup' %}">Sign Up</a></li>
               <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
