@@ -30,10 +30,30 @@
       </div>
     </nav>
 
-    <header class="hero py-5 text-white">
-      <div class="container text-center">
-        <h1 class="display-5 fw-bold">Organize and share your memories</h1>
-        <p class="lead">Create albums, upload photos, and manage access — all in the cloud.</p>
+    <header class="hero py-6 text-white">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <span class="eyebrow text-uppercase letter-spacing mb-3 d-inline-block">Photo Album Manager</span>
+            <h1 class="display-5 fw-bold lh-sm">Organize your albums with elegant cloud storage.</h1>
+            <p class="lead text-muted mt-3">Create albums, save photos in Cloudinary, and manage users with PostgreSQL-backed security.</p>
+            <div class="mt-4">
+              <a class="btn btn-primary btn-lg me-2" href="{% url 'albums:album-create' %}">Create Album</a>
+              <a class="btn btn-outline-light btn-lg" href="{% url 'signup' %}">Get Started</a>
+            </div>
+          </div>
+          <div class="col-lg-5 d-none d-lg-block">
+            <div class="hero-card p-4 rounded-4 shadow-lg bg-white bg-opacity-10 border border-white border-opacity-10">
+              <h3 class="h5 text-white mb-3">Trusted by creators</h3>
+              <p class="text-white-75">Secure image storage, simple album management, and role-based access. Perfect for personal collections and small teams.</p>
+              <ul class="list-unstyled mt-4 text-white-75">
+                <li class="mb-2">• Cloudinary media upload</li>
+                <li class="mb-2">• PostgreSQL storage</li>
+                <li>• Auth and RBAC built in</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
