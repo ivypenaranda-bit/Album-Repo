@@ -1,0 +1,25 @@
+.root, :root{--violet:#6f42c1;--violet-600:#5a35a8;--muted:#6c757d}
+body{font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#faf8ff; color:#222}
+.bg-violet{background-color:var(--violet)!important}
+
+.hero{background: linear-gradient(120deg, rgba(111,66,193,0.95), rgba(107,77,199,0.9));}
+
+.card{border:0; border-radius:12px; overflow:hidden}
+.album-card{transition:transform .18s ease, box-shadow .18s ease}
+.album-card:hover{transform:translateY(-6px); box-shadow:0 8px 30px rgba(79,61,110,0.12)}
+.card-img-top{object-fit:cover;height:220px}
+
+.btn-primary{background:var(--violet); border-color:var(--violet)}
+.btn-primary:hover{background:var(--violet-600); border-color:var(--violet-600)}
+
+.photo-grid{display:grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap:1rem}
+.photo-card img{width:100%; height:220px; object-fit:cover; border-radius:8px}
+
+footer{border-top:1px solid #eee}
+
+.placeholder{display:flex; align-items:center; justify-content:center; background:#efe7ff; color:var(--violet); height:220px}
+
+@media (max-width:576px){
+	.card-img-top, .placeholder{height:160px}
+}
+
